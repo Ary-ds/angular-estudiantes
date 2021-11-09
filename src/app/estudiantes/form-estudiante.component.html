@@ -1,0 +1,31 @@
+
+<div class="container">
+
+    <h4>{{ titulo }}</h4>
+
+    <form>
+
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>            <!--  mapeamos a la clase estudiante utilizando la instancia -->
+          <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="estudiante.nombre"> 
+        </div>
+
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido</label>            <!--  mapeamos a la clase estudiante utilizando la instancia -->
+          <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="estudiante.apellido"> 
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>            <!--  mapeamos a la clase estudiante utilizando la instancia -->
+          <input type="text" class="form-control" id="email" name="email" [(ngModel)]="estudiante.email"> 
+        </div>
+
+        <div class="mb-3">
+          <label for="nota" class="form-label">Nota</label>            <!--  mapeamos a la clase estudiante utilizando la instancia -->
+          <input type="text" class="form-control" id="nota" name="nota" [(ngModel)]="estudiante.nota"> 
+        </div>
+                                                      <!-- mapeamos el metodo create -->
+        <button class="btn btn-primary" role="button" (click)='create()'>Registrar</button>
+      </form>
+
+</div>
