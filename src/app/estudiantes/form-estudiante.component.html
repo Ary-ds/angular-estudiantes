@@ -25,7 +25,13 @@
           <input type="text" class="form-control" id="nota" name="nota" [(ngModel)]="estudiante.nota"> 
         </div>
                                                       <!-- mapeamos el metodo create -->
-        <button class="btn btn-primary" role="button" (click)='create()'>Registrar</button>
+        <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!estudiante.id else elseBlock">Registrar</button>
+
+    <ng-template #elseBlock>
+              <!-- mapeamos el metodo create -->
+        <button class="btn btn-danger" role="button" (click)='upDate()'>Actualizar</button>
+    </ng-template>                                          
+
       </form>
 
 </div>

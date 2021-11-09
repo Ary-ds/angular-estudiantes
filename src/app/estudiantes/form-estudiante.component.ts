@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Estudiante } from './estudiante';
 import { EstudianteService } from './estudiante.service';
 
@@ -17,9 +17,27 @@ export class FormEstudianteComponent implements OnInit {
   titulo:string = 'Registros de Estudiante';
 
   //declaramos las dos variables privadas
-  constructor(private estudianteService: EstudianteService, private router: Router) { }
+  constructor(private estudianteService: EstudianteService, private router: Router, private activatedRoute:ActivatedRoute ) { }
+
 
   ngOnInit(): void {
+    this.cargarEstudiante();
+  }
+
+
+  //creamos el metodo cargaEstudiante
+  cargarEstudiante(): void {
+    this.activatedRoute.params.subscribe(
+      //comprobamos si el id existe
+      e => {
+        let id = e ['id'];
+        if(id){
+          this.estudianteService.get(id).subscribe(
+            es => this.estudiante = es
+          );
+        }
+      }
+    );
   }
 
   //creamos el metodo donde vamos hacer las llamadas 
