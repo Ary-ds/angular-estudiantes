@@ -11,6 +11,7 @@
         <th scope="col">APELLIDO</th>
         <th scope="col">E-MAIL</th>
         <th scope="col">NOTA</th>
+        <th scope="col">EDITAR</th>
       </tr>
     </thead>
     <tbody>
@@ -20,7 +21,9 @@
         <td>{{ estudiante.nombre }}</td>
         <td>{{ estudiante.apellido }}</td>
         <td>{{ estudiante.email }}</td>
-        <td>{{ estudiante.nota }}</td>
+        <td>{{ estudiante.nota }}</td>                      <!-- para hacer llamda a la routa hay que poner la / en inicio para que puede hacer la llamada -->
+        <td>  <button class="btn btn-warning" type="button" [routerLink]="['/estudiantes/from', estudiante.id]">Editar</button></td>
+       
       </tr>
  
     </tbody>
@@ -29,3 +32,5 @@
   <br><br>
                                               <!-- para hacer llamda a la routa hay que poner la / en inicio para que puede hacer la llamada -->
   <button class="btn btn-success" type="button" [routerLink]="['/estudiantes/from']">Nuevo Estudiante</button>
+
+

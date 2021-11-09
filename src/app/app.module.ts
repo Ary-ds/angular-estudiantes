@@ -24,6 +24,7 @@ const routes: Routes = [
   { path:'', redirectTo:'/estudiantes', pathMatch: 'full'},
   { path:'estudiantes', component: EstudiantesComponent},
   { path:'estudiantes/from', component: FormEstudianteComponent},
+  { path:'estudiantes/from/:id', component: FormEstudianteComponent},
 ]
 
 
