@@ -30,4 +30,18 @@ export class EstudiantesComponent implements OnInit {
 
   }
 
+
+  //creamos el metodo para eliminar un estudiante y le pasamos el parametro
+  delete(estudiante: Estudiante): void{
+    console.log('listo para eliminar');
+
+   //creamos la funcionalidad
+   this.estudianteService.delete(estudiante.id).subscribe(
+     res => this.estudianteService.getAll().subscribe(
+        response => this.estudiantes = response
+     )
+   );
+
+  }
+
 }
