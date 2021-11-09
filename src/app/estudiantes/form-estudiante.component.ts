@@ -49,4 +49,14 @@ export class FormEstudianteComponent implements OnInit {
 
   }
 
+
+//creamos le metodo actualizar
+upDate(): void{
+  this.estudianteService.update(this.estudiante).subscribe(
+    res => this.router.navigate(['/estudiantes']) //retorna a estudiante
+  );
+}
+
+
+
 }
